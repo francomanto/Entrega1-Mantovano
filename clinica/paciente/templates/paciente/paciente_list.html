@@ -1,0 +1,36 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+{% block my_blog_title %}
+Paciente
+{% endblock %}
+
+{% block my_blog_header %}
+    <header class="masthead" style="background-image: url('../../static/home/assets/img/paciente.png')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-15 col-lg-16 col-xl-14">
+                    <div class="site-heading">
+                        <h1>Pacientes</h1>
+                        <span class="subheading"> CLINICA </span>
+                    </div>
+                </div>
+            </div>
+            <a class="button_custom" href="{% url 'paciente:paciente-add' %}">Crear nuevo Paciente</a>
+        </div>
+    </header>
+{% endblock %}
+
+{% block my_blog_content %}
+    {% for paciente in pacientes %}
+        <!-- Post preview-->
+        <div class="post-preview">
+            <h2 class="post-title">Este es el Paciente: {{ paciente.name }}  {{ paciente.last_name }}</h2>
+            <h3 class="post-subtitle">Email: {{ paciente.email }}</h3>
+            <h3 class="post-subtitle">Dni: {{ paciente.dni }}</h3>
+            <h3 class="post-subtitle">Telefono: {{ paciente.tel }}</h3>
+        </div>
+        <!-- Divider-->
+        <hr class="my-4" />
+    {% endfor %}
+{% endblock %}
