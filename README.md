@@ -12,6 +12,7 @@ se pueden buscar por nombre o apellido.
 -Dentro de 'home' tenemos un template: index.html (padre) y las clases ('paciente', 'profesional' y 'sede') tienen sus propios template con 
 herencia de él.
 
+El proyecto se encuentra funcional para probarlo. 
 
 
 
